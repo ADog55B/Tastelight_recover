@@ -5,12 +5,15 @@
   <title>Tastelight</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       background: #ffffff;
       color: #111;
-      font-family: serif;
+      /* 第二步：更新字体族，优先使用加载的云端字体 */
+      font-family: 'Noto Serif SC', "Songti SC", "STSong", "SimSun", serif;
     }
 
     .container {
@@ -20,17 +23,61 @@
       text-align: center;
     }
 
+    /* 头图设置：电脑端显示一半宽度并居中 */
     .headline {
-      width: 100%;         /* 宽度改为原来的一半 */
-      max-width: 600px;   /* 可选：设置最大宽度，防止在大屏幕上显得太大 */
+      width: 100%;
+      max-width: 600px;
       height: auto;
       display: block;
-      margin: 0 auto;     /* 关键：让图片水平居中 */
+      margin: 0 auto;
+    }
+
+    .intro {
+      margin-top: 1.5rem;
+      font-style: italic;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;    /* 核心：空间不足时自动换行，防止竖排 */
+      gap: 1.5rem 1rem;   /* 链接间的间距 */
+      padding: 0 1rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #111;
+      font-weight: bold;
+      white-space: nowrap; /* 防止链接内部文字断行 */
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      border-bottom: 1px solid #111;
+    }
+
+    /* 带有小字的导航组合 */
+    .nav-item-group {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      vertical-align: top;
+    }
+
+    .sub-label {
+      font-size: 0.75rem;
+      color: #999;
+      margin-top: 4px;
+      font-weight: normal;
     }
 
     .date {
       font-weight: bold;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
 
     .poem {
@@ -49,32 +96,24 @@
     .footer {
       line-height: 1.7;
       font-size: 0.95rem;
-    }
-    .nav-links {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem; /* 链接之间的间距 */
+      text-align: left;
     }
 
-    .nav-links a {
-      text-decoration: none;
-      color: #111;
-      font-weight: bold;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s;
+    /* 专门针对手机端的优化补丁 */
+    @media (max-width: 600px) {
+      .headline {
+        width: 100% !important; /* 手机上头图占满，防止太小 */
+      }
+      .container {
+        padding: 1.5rem 1rem 2rem;
+      }
+      .nav-links {
+        gap: 1rem 0.8rem; /* 进一步缩小手机端间距 */
+      }
+      .nav-links a {
+        font-size: 0.9rem;
+      }
     }
-
-    .nav-links a:hover {
-      border-bottom: 1px solid #111; /* 鼠标悬停效果 */
-    }
-
-    .intro {
-      margin-top: 1.5rem;
-      font-style: italic; /* 斜体可以增加质感 */
-      color: #555;        /* 颜色稍浅，突出层次 */
-    }
-
   </style>
 </head>
 
@@ -82,7 +121,8 @@
 
   <img src="headline.jpg" alt="Tastelight" class="headline">
   <div class="container">
-    <div class="intro">In memory of Haley Fan (Kouding) 1996.4.3 - 2024.10</div>
+    <div class="intro">In memory of Haley Fan (Kouding) 
+      <br>1996.4.3 - 2024.10</div>
   <div class="container">
         <div class="nav-links">
           <a href="/haley_articles">文章</a>
@@ -92,7 +132,6 @@
           <a href="https://store.steampowered.com/app/1319460/Fashion_Police_Squad/">Be officer Haley</a>
         </div>
         
-    <div class="date">2023-01-26</div>
 
     <div class="poem">
 现在的时间还早 我的爱人
