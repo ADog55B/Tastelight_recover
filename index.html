@@ -21,9 +21,11 @@
     }
 
     .headline {
-      width: 100%;
+      width: 100%;         /* 宽度改为原来的一半 */
+      max-width: 600px;   /* 可选：设置最大宽度，防止在大屏幕上显得太大 */
       height: auto;
       display: block;
+      margin: 0 auto;     /* 关键：让图片水平居中 */
     }
 
     .date {
@@ -48,15 +50,48 @@
       line-height: 1.7;
       font-size: 0.95rem;
     }
+    .nav-links {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem; /* 链接之间的间距 */
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #111;
+      font-weight: bold;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    .nav-links a:hover {
+      border-bottom: 1px solid #111; /* 鼠标悬停效果 */
+    }
+
+    .intro {
+      margin-top: 1.5rem;
+      font-style: italic; /* 斜体可以增加质感 */
+      color: #555;        /* 颜色稍浅，突出层次 */
+    }
+
   </style>
 </head>
 
 <body>
 
   <img src="headline.jpg" alt="Tastelight" class="headline">
-
   <div class="container">
-
+    <div class="intro">In memory of Haley Fan (Kouding) 1996.4.3 - 2024.10</div>
+  <div class="container">
+        <div class="nav-links">
+          <a href="/haley_articles">文章</a>
+          <a href="/haley_poems">诗歌</a>
+          <a href="https://soundcloud.com/kouding">音乐</a>
+          <a href="https://tastelight.itch.io/">游戏</a>
+          <a href="https://store.steampowered.com/app/1319460/Fashion_Police_Squad/">Be officer Haley</a>
+        </div>
+        
     <div class="date">2023-01-26</div>
 
     <div class="poem">
@@ -82,10 +117,9 @@ The days ahead are still long"
     <hr>
 
     <div class="footer">
-      Tastelight 是 Haley Fan (Kouding) 本科时购买的域名。我们共同使用这个名字发布了几期游戏设计翻译视频，并创作了几款游戏。2025年11月，域名失效，我也不再联系得到她，于是我决定将域名重新购买下来。
-      <br><br>
-      如果你是她的现实中好友，或是她本人，或知道她的近期动态，烦请与我联系：<br>
-      pipineko at outlook.com
+      在另一个世界品尝到光了吗？
+      <br>
+      希望它很美味。
     </div>
 
   </div>
