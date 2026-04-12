@@ -99,6 +99,14 @@
       text-align: center;
     }
 
+    .footer-note {
+      color: #999;         /* 浅灰色 */
+      font-style: italic;  /* 斜体 */
+      font-size: 0.85rem;  /* 可选：稍微缩小一点字号，增加层次感 */
+      display: block;      /* 可选：确保它独占一行，且能更好地控制边距 */
+      margin-top: 0.5rem;  /* 可选：增加与上一行之间的距离 */
+    }
+
     /* 专门针对手机端的优化补丁 */
     @media (max-width: 600px) {
       .headline {
@@ -160,7 +168,7 @@ The days ahead are still long"
       <br>
       希望它很美味。
       <br>
-      by <a href="/homepage">Someone who loves her forever</a>
+      <span class="footer-note">Website recovered by pipineko at outlook.com</span>
     </div>
 
   </div>
